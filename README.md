@@ -1,137 +1,108 @@
-# Beats-Market-Analysis
+📌 Project Overview
 
-Overview
+This project evaluates whether Beats should launch a new high-fidelity wireless headphone using data-driven analysis.
 
-This project evaluates the feasibility of launching a high-fidelity wireless headphone for Beats by analyzing:
+The study integrates:
 
-Consumer sentiment
+Consumer survey data
 
-Market positioning
+Market reference datasets
 
-Pricing preferences
+Competitive benchmarking
 
-Competitive performance
+Sentiment analysis
 
-Customer segmentation
+Pricing preference modeling
 
-Purchase intent drivers
+Executive-level strategic framing
 
-The objective is to support an executive launch decision using data-driven insights.
+The objective is to simulate a real-world product strategy decision supported by structured analytics.
 
-Project Objectives
+🎯 Business Objective
 
-Identify unmet needs in the premium headphone segment
+Determine:
 
-Analyze pricing tolerance and willingness to pay
+Whether a high-fidelity headphone launch is viable
 
-Benchmark competitors across key performance dimensions
+Which customer segment to target
 
-Evaluate sentiment trends from consumer feedback
+Optimal pricing band
 
-Deliver an executive recommendation
+🧠 Methodology
+1️⃣ Data Cleaning & Preparation
 
-Data Sources
+Removed null and inconsistent entries
 
-Consumer survey responses (Excel)
+Standardized categorical variables
 
-Market reference datasets (CSV)
-
-Cleaned internal datasets
-
-Competitive benchmarking metrics
-
-Sentiment-derived themes
-
-/data
-    raw datasets
-    cleaned datasets
-/notebooks
-    Cleaned_Dataset.ipynb
-/visualizations
-    pricing_distribution.png
-    demographics.png
-    sentiment_analysis.png
-    channel_preferences.png
-/presentations
-    Market_Analysis.pptx
-    Executive_Launch_Recommendation.pptx
-/docs
-    survey_questions.pdf
-    sentiment_report.docx
-
-    Methodology
-1. Data Cleaning
-
-Removed null entries
-
-Standardized categorical labels
-
-Converted pricing ranges to numerical midpoint values
+Converted pricing ranges to numeric midpoint values
 
 Aggregated survey responses
 
-2. Exploratory Data Analysis
+Created cleaned export datasets
 
-Demographic distribution
+2️⃣ Exploratory Data Analysis
 
-Feature preference mapping
+Demographic segmentation
 
-Channel preference breakdown
+Feature preference distribution
 
-Price distribution analysis
+Channel usage breakdown
 
-3. Sentiment Analysis
+Pricing willingness distribution
 
-Theme extraction
+Purchase intent mapping
+
+3️⃣ Sentiment Analysis
+
+Theme extraction from feedback
 
 Positive vs negative driver identification
 
-Word frequency evaluation
+Word frequency analysis
 
-4. Competitive Benchmarking
+Performance gap detection
 
-Radar chart comparison
+4️⃣ Competitive Benchmarking
 
-Performance dimension scoring
+Radar chart comparison across:
 
-Gap identification
+Sound Quality
 
-Key Insights
+Active Noise Cancellation
 
-Strong demand exists in comfort and ANC-focused segments.
+Comfort
 
-Call quality presents differentiation opportunity.
+Call Quality
 
-Price sensitivity peaks between mid-premium tiers.
+Reliability
 
-Brand loyalty remains strong among lifestyle buyers.
+Identified differentiation opportunities
 
-Business Recommendation
+📊 Key Insights
 
-Launch a premium-leaning high-fidelity model targeting clarity-first users, while resolving performance pain points identified in sentiment analysis.
+Strong consumer demand for comfort and ANC features
 
-Tools Used
+Call quality presents a competitive improvement opportunity
 
-Python
+Mid-premium pricing band shows highest purchase intent
 
-Pandas
+Distinct behavioral difference between lifestyle and performance-focused buyers
 
-Matplotlib
+Brand loyalty remains strong among existing Beats users
 
-Jupyter Notebook
+📈 Business Recommendation
 
-Excel
+Launch a premium-leaning high-fidelity model targeting clarity-first users, with:
 
-PowerPoint
+Enhanced call quality
 
-Future Enhancements
+Technical performance improvements
 
-Regression-based purchase intent modeling
+Controlled rollout in mid-premium pricing range
 
-Customer clustering
+Scale only after validating product-market fit.
 
-Price elasticity modeling
+Competitive positioning strategy
 
-TAM/SAM/SOM financial modeling
-
-Reproducible pipeline setup
+Key feature differentiation opportunities
