@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beats by Dr. Dre | High-Fidelity Wireless Headphones Market Research</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #0a0a0a;
+            --primary-red: #e31e24;
+            --accent-gold: #d4af37;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --bg-light: #fafafa;
+            --bg-white: #ffffff;
+            --border-subtle: #e5e5e5;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #1a1a1a 100%);
+            color: white;
+            padding: 60px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(227, 30, 36, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--primary-red);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #999;
+            font-weight: 400;
+        }
+
+        /* Executive Summary */
+        .executive-summary {
+            background: white;
+            margin: -40px 80px 40px;
+            padding: 50px 60px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            position: relative;
+            z-index: 2;
+        }
+
+        .recommendation-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .recommendation-text {
+            font-family: 'Crimson Pro', serif;
+            font-size: 28px;
+            line-height: 1.5;
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+
+        .key-insights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .insight-card {
+            border-left: 3px solid var(--primary-red);
+            padding-left: 20px;
+        }
+
+        .insight-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin-bottom: 8px;
+        }
+
+        .insight-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 0 80px 80px;
+        }
+
+        .section {
+            background: white;
+            padding: 50px 60px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 2px solid var(--border-subtle);
+        }
+
+        .section-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .section-number {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .chart-container {
+            margin: 30px 0;
+            height: 400px;
+            position: relative;
+        }
+
+        .chart-container-small {
+            margin: 30px 0;
+            height: 300px;
+            position: relative;
+        }
+
+        .chart-caption {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-top: 16px;
+            padding-left: 16px;
+            border-left: 2px solid var(--border-subtle);
+        }
+
+        .interpretation {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 6px;
+            margin-top: 30px;
+            border-left: 4px solid var(--primary-red);
+        }
+
+        .interpretation h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-primary);
+        }
+
+        .interpretation p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Demographics Grid */
+        .demographics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .demo-chart {
+            background: #fafafa;
+            padding: 30px;
+            border-radius: 6px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .demo-chart h4 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        .demo-chart canvas {
+            max-height: 250px;
+        }
+
+        /* Brand Strategy Cards */
+        .strategy-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .strategy-card {
+            background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border-subtle);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .strategy-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .strategy-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .strategy-card h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .strategy-card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .comparison-card {
+            background: #fafafa;
+            padding: 30px;
+            border-radius: 6px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .comparison-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: #999;
+            padding: 40px 80px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            header, .main-content, footer {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+            
+            .executive-summary {
+                margin-left: 40px;
+                margin-right: 40px;
+            }
+
+            .demographics-grid, .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .strategy-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .key-insights {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Tab Navigation */
+        .tab-navigation {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--border-subtle);
+            padding-bottom: 0;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-primary);
+        }
+
+        .tab-btn.active {
+            color: var(--primary-red);
+            border-bottom-color: var(--primary-red);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Stat Highlight */
+        .stat-highlight {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(8, 145, 178, 0.05) 100%);
+            border-left: 4px solid #1e3a8a;
+            padding: 20px 24px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .stat-highlight strong {
+            color: #1e3a8a;
+            font-weight: 700;
+        }
+
+        /* Interactive Features */
+        .filter-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid var(--border-subtle);
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: #1e3a8a;
+            color: #1e3a8a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0891b2 100%);
+            color: white;
+            border-color: #1e3a8a;
+        }
+
+        /* Tooltip Enhancement */
+        .info-tooltip {
+            position: relative;
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background: #1e3a8a;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: help;
+            margin-left: 8px;
+            line-height: 18px;
+        }
+
+        .info-tooltip:hover::after {
+            content: attr(data-tip);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-dark);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 400;
+            white-space: nowrap;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .info-tooltip:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 115%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: var(--primary-dark);
+            z-index: 100;
+        }
+
+        /* Expandable Cards */
+        .expandable-card {
+            background: #fafafa;
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            margin: 20px 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .expandable-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .expandable-header {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            border-bottom: 1px solid var(--border-subtle);
+            transition: background 0.3s ease;
+        }
+
+        .expandable-header:hover {
+            background: #f8f9fa;
+        }
+
+        .expandable-header h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .expand-icon {
+            font-size: 20px;
+            color: var(--text-secondary);
+            transition: transform 0.3s ease;
+        }
+
+        .expandable-card.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding: 0 24px;
+        }
+
+        .expandable-card.expanded .expandable-content {
+            max-height: 2000px;
+            padding: 24px;
+        }
+
+        /* Animated Counter */
+        .animated-counter {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-red);
+        }
+
+        /* Chart Loading Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chart-container, .chart-container-small {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .chart-container:nth-child(1) { animation-delay: 0.1s; }
+        .chart-container:nth-child(2) { animation-delay: 0.2s; }
+        .chart-container:nth-child(3) { animation-delay: 0.3s; }
+
+        /* Interactive Data Cards */
+        .data-card {
+            background: white;
+            padding: 24px;
+            border-radius: 6px;
+            border: 1px solid var(--border-subtle);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .data-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-color: #1e3a8a;
+        }
+
+        .data-card.selected {
+            border-color: #1e3a8a;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(8, 145, 178, 0.05) 100%);
+        }
+
+        /* Toggle Switch */
+        .toggle-switch {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .toggle-switch input {
+            appearance: none;
+            width: 50px;
+            height: 26px;
+            background: #ddd;
+            border-radius: 13px;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .toggle-switch input:checked {
+            background: #1e3a8a;
+        }
+
+        .toggle-switch input::before {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: white;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-switch input:checked::before {
+            transform: translateX(24px);
+        }
+
+        .toggle-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Comparison Slider */
+        .comparison-slider {
+            margin: 30px 0;
+        }
+
+        .slider-container {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(to right, #1e3a8a 0%, #0891b2 100%);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #1e3a8a;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #1e3a8a;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Export Button */
+        .export-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0891b2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(30, 58, 138, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .export-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Section Navigation */
+        .section-nav {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .section-nav a {
+            display: block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--border-subtle);
+            margin: 12px 0;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .section-nav a:hover,
+        .section-nav a.active {
+            background: #1e3a8a;
+            transform: scale(1.3);
+        }
+
+        /* Print Styles */
+        @media print {
+            .section-nav,
+            .export-btn,
+            .filter-group,
+            .tab-navigation {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">Beats by Dr. Dre</div>
+            <h1>High-Fidelity Wireless Headphones<br>Market Research Analysis</h1>
+            <p class="subtitle">Executive Summary & Strategic Recommendations — February 2026</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Executive Summary -->
+        <section class="executive-summary">
+            <div class="recommendation-badge">✓ Recommended</div>
+            <p class="recommendation-text">
+                Launch a premium high-fidelity wireless headphone line targeting the $200-300 segment, emphasizing superior sound quality, addressing critical audio issues (distortion, balance), and leveraging strategic online distribution.
+            </p>
+            
+            <div class="key-insights">
+                <div class="insight-card">
+                    <div class="insight-value">4,975</div>
+                    <div class="insight-label">Survey Respondents</div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-value">86.5%</div>
+                    <div class="insight-label">Ages 18-34 (Core Demo)</div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-value">25.5%</div>
+                    <div class="insight-label">Willing to Pay $100+</div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-value">65%</div>
+                    <div class="insight-label">Buy via Amazon</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Survey Details -->
+        <section class="main-content">
+            <div class="section" id="section-0">
+                <div class="section-header">
+                    <h2 class="section-title">Survey Overview & Demographics</h2>
+                    <span class="section-number">SECTION 00</span>
+                </div>
+
+                <div class="demographics-grid">
+                    <div class="demo-chart">
+                        <h4>Age Distribution</h4>
+                        <canvas id="ageChart"></canvas>
+                    </div>
+                    <div class="demo-chart">
+                        <h4>Gender Distribution</h4>
+                        <canvas id="genderChart"></canvas>
+                    </div>
+                    <div class="demo-chart">
+                        <h4>Income Distribution</h4>
+                        <canvas id="incomeChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="interpretation">
+                    <h4>Key Demographics Insight</h4>
+                    <p>Survey captured 4,975 respondents with dominant 18-24 representation (68.4%) and strong 25-34 cohort (18.1%)—totaling 86.5% in our core target demographic. Gender split is balanced (Female 51.6%, Male 45.7%). Income shows diversity: 36.6% earn $50K+, representing premium purchasing power, while 37% earn under $50K or preferred not to disclose. This mix validates a tiered product strategy with flagship at $249-299 and accessible model at $179-199.</p>
+                </div>
+            </div>
+
+            <!-- Section 1: Sound Quality Priority & Competitive Gaps -->
+            <div class="section" id="section-1">
+                <div class="section-header">
+                    <h2 class="section-title">Sound Quality: Market Opportunity</h2>
+                    <span class="section-number">SECTION 01</span>
+                </div>
+
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h4>Current Sound Quality Ratings</h4>
+                        <div class="chart-container-small">
+                            <canvas id="soundQualityChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="comparison-card">
+                        <h4>Sound Quality Sentiment</h4>
+                        <div class="chart-container-small">
+                            <canvas id="sentimentChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-highlight">
+                    <strong>Critical Finding:</strong> While 86% rate their current speakers as "Good" or "Excellent," sentiment analysis reveals 62% have mixed or negative feelings, indicating a satisfaction-expectation gap.
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="issuesChart"></canvas>
+                </div>
+
+                <p class="chart-caption">Top sound quality complaints from qualitative analysis (n=2,412 negative mentions)</p>
+
+                <div class="interpretation">
+                    <h4>Strategic Implication</h4>
+                    <p>The market reveals a profound opportunity: consumers report high satisfaction on surveys but express significant frustration in open-ended feedback. The top 3 issues—distortion (412 mentions), muffled/muddy sound (367), and inconsistent audio (342)—are precisely what high-fidelity engineering can solve. Bass overpowering (298 mentions) is particularly relevant for Beats, which must evolve beyond the "heavy bass" perception to deliver balanced, accurate sound. The $200-300 headphones should emphasize: (1) low distortion through premium drivers, (2) clarity across the frequency spectrum, (3) consistent performance at all volume levels, (4) balanced EQ as default with customizable profiles.</p>
+                </div>
+            </div>
+
+            <!-- Section 2: Price-Quality Correlation -->
+            <div class="section" id="section-2">
+                <div class="section-header">
+                    <h2 class="section-title">Price Sensitivity by Sound Quality Priority</h2>
+                    <span class="section-number">SECTION 02</span>
+                </div>
+
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h4>Low Sound Quality Priority (n=1,795)</h4>
+                        <div class="chart-container-small">
+                            <canvas id="priceLowPriorityChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="comparison-card">
+                        <h4>High Sound Quality Priority (n=1,747)</h4>
+                        <div class="chart-container-small">
+                            <canvas id="priceHighPriorityChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-highlight">
+                    <strong>Key Finding:</strong> Among high sound quality prioritizers, 35.5% spent $100+ (vs 32.0% of low prioritizers). More critically, 10.1% of audiophiles paid $200+, proving premium market viability.
+                </div>
+
+                <div class="interpretation">
+                    <h4>Strategic Implication</h4>
+                    <p>The data validates our hypothesis: consumers who prioritize sound quality demonstrate higher willingness to pay premium prices. Among the 1,747 respondents who ranked sound as their #1 priority, 445 (25.5%) paid $100-200, and 177 (10.1%) paid over $200. This contrasts with the broader market where budget dominates ($50-100). The Beats high-fidelity line should target this 10-25% premium segment with messaging focused on: (1) audiophile-grade components, (2) studio-quality sound reproduction, (3) engineered for discerning listeners, (4) investment in long-term audio excellence. Price anchoring at $249-299 positions us in the premium tier while remaining accessible compared to $400+ ultra-premium competitors.</p>
+                </div>
+            </div>
+
+            <!-- Section 3: Usage Patterns -->
+            <div class="section" id="section-3">
+                <div class="section-header">
+                    <h2 class="section-title">Product Usage & Engagement</h2>
+                    <span class="section-number">SECTION 03</span>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="usageChart"></canvas>
+                </div>
+
+                <p class="chart-caption">Frequency of wireless speaker/headphone usage among survey respondents</p>
+
+                <div class="interpretation">
+                    <h4>Strategic Implication</h4>
+                    <p>High engagement patterns validate the market opportunity: 1,050 users (30%) listen daily, and 1,200 (34.3%) use devices several times weekly—totaling 64.3% highly engaged users. This indicates audio devices are integral to daily routines, not occasional purchases. For Beats: (1) emphasize durability and comfort for extended wear, (2) optimize battery life for all-day usage, (3) design seamless device switching for multi-context use (work, commute, gym), (4) highlight features for power users (quick charge, multi-device pairing, customizable controls). Marketing should position the product as "built for how you actually listen"—every day, multiple times, across different environments.</p>
+                </div>
+            </div>
+
+            <!-- Section 4: Channel Preferences -->
+            <div class="section" id="section-4">
+                <div class="section-header">
+                    <h2 class="section-title">Purchasing Channel Strategy</h2>
+                    <span class="section-number">SECTION 04</span>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="channelChart"></canvas>
+                </div>
+
+                <p class="chart-caption">Top purchasing channels selected by respondents (multi-select question)</p>
+
+                <div class="stat-highlight">
+                    <strong>Amazon Dominance:</strong> Combined Amazon mentions (direct + "large multi-brand stores") total 3,235 references—representing 65% of all channel preferences. No other channel comes close.
+                </div>
+
+                <div class="interpretation">
+                    <h4>Strategic Implication</h4>
+                    <p>Amazon's overwhelming dominance (65% of preferences) dictates go-to-market strategy. Priority actions: (1) <strong>Amazon Excellence:</strong> Premium product pages with A+ content, professional photography, video demos, detailed specs. Invest in review generation from early adopters. Use Amazon Vine for verified reviews. (2) <strong>Physical Retail (14.8%):</strong> Strategic demo stations at 50-100 Best Buy and Apple Store locations for trial and comparison. Train staff as "Beats Audio Specialists." (3) <strong>Department Stores (12.9%):</strong> Target, Costco placement for brand visibility and impulse discovery. (4) <strong>Direct (9.7%):</strong> beats.com for brand enthusiasts, early access drops, and exclusive colorways. While direct is smallest channel, it offers highest margins and brand control. The 4-tier approach ensures omnipresence while prioritizing Amazon as revenue engine.</p>
+                </div>
+            </div>
+
+            <!-- Section 5: Brand Recognition & Strategy -->
+            <div class="section" id="section-5">
+                <div class="section-header">
+                    <h2 class="section-title">Brand Strategy & Market Positioning</h2>
+                    <span class="section-number">SECTION 05</span>
+                </div>
+
+                <div class="tab-navigation">
+                    <button class="tab-btn active" onclick="switchTab('brand')">Competitive Landscape</button>
+                    <button class="tab-btn" onclick="switchTab('strategy')">Strategic Recommendations</button>
+                </div>
+
+                <div id="brand-tab" class="tab-content active">
+                    <div class="chart-container">
+                        <canvas id="brandChart"></canvas>
+                    </div>
+
+                    <p class="chart-caption">Brand ownership and familiarity among survey respondents (multi-select question, n=4,975)</p>
+
+                    <div class="stat-highlight">
+                        <strong>Market Gap:</strong> JBL leads with 2,216 owners (44.5%), Bose has 1,142 (23%), Sony 870 (17.5%). Beats captures only 53 (1.1%)—a 40x gap vs. the leader.
+                    </div>
+
+                    <div class="interpretation">
+                        <h4>Competitive Landscape Insight</h4>
+                        <p>The 1.1% current market share represents both challenge and opportunity. JBL's dominance stems from aggressive pricing and broad SKU range. Bose owns the premium noise-cancelling segment. Sony balances quality and value. Beats' minimal presence in wireless speakers means: (1) <strong>Brand equity in headphones doesn't transfer automatically</strong>—we must earn consumer trust in this category. (2) <strong>Differentiation is critical</strong>—we can't compete on price or SKU breadth; we must own the "high-fidelity for music culture" positioning. (3) <strong>Partnership leverage:</strong> Apple Music integration, spatial audio, lossless playback optimization—features competitors can't match. (4) <strong>Influencer strategy:</strong> Partner with 500-1,000 music producers, audio engineers, and artists who can credibly speak to sound quality. Create authentic reviews before broad launch. The path to 5-10% market share runs through superior audio engineering + cultural credibility + strategic partnerships.</p>
+                    </div>
+                </div>
+
+                <div id="strategy-tab" class="tab-content">
+                    <div class="strategy-cards">
+                        <div class="strategy-card">
+                            <div class="strategy-icon">🎯</div>
+                            <h4>Address Sound Quality Gaps</h4>
+                            <p>Design specifically to solve the top complaints: distortion-free drivers even at high volume, clarity across frequencies (avoid "muddy" sound), consistent performance, balanced EQ (move beyond bass-heavy stereotype). Partner with audio engineers for blind testing vs. Sony WH-1000XM5 and Bose QC Ultra. Win on objective sound metrics.</p>
+                        </div>
+
+                        <div class="strategy-card">
+                            <div class="strategy-icon">👥</div>
+                            <h4>Influencer-Led Launch</h4>
+                            <p>Create "Beats Audio Circle" program: 500 music producers/engineers + 500 content creators receive pre-launch units. Require documented sound tests and honest reviews. Target YouTube (MKBHD, Linus Tech Tips), TikTok audio communities, Instagram music producers. Generate 10,000+ organic mentions before retail launch.</p>
+                        </div>
+
+                        <div class="strategy-card">
+                            <div class="strategy-icon">🎵</div>
+                            <h4>Apple Ecosystem Integration</h4>
+                            <p>Develop exclusive features: spatial audio with head tracking, lossless playback optimization for Apple Music, one-tap pairing across iPhone/iPad/Mac, Find My integration, artist-curated EQ profiles. Bundle 6-month Apple Music trials. Make these the "obvious choice" for Apple users who care about sound.</p>
+                        </div>
+
+                        <div class="strategy-card">
+                            <div class="strategy-icon">🏆</div>
+                            <h4>Premium Retail Experience</h4>
+                            <p>Launch "Sound Lab" demo stations in 50 Apple Stores + 50 Best Buy flagship locations. Side-by-side comparisons with Sony, Bose, Sennheiser. Hire and train "Beats Audio Specialists" who understand frequency response, noise cancellation, and codec differences. Let the product win on direct comparison.</p>
+                        </div>
+
+                        <div class="strategy-card">
+                            <div class="strategy-icon">💎</div>
+                            <h4>Dual-SKU Strategy</h4>
+                            <p><strong>Flagship ($249-299):</strong> High-res audio drivers, premium materials, 40hr battery, advanced ANC. Limited colorways + artist collabs (Travis Scott, Billie Eilish) at $299-349 create hype. <strong>Accessible ($179-199):</strong> Same sound architecture, slightly reduced battery/materials. Target the 25.5% willing to pay $100-200 who want quality without ultra-premium price.</p>
+                        </div>
+
+                        <div class="strategy-card">
+                            <div class="strategy-icon">📊</div>
+                            <h4>Data-Driven Evolution</h4>
+                            <p>Launch customer advisory panel of 200 power users for continuous feedback. Track NPS, return rates, online sentiment. Implement firmware updates addressing top user requests. Show the market Beats listens—build long-term loyalty. Publish transparency reports on sound quality improvements, demonstrating commitment to audio excellence over gimmicks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Beats by Dr. Dre. Market Research conducted across 4,975 respondents. Analysis prepared for executive review.</p>
+    </footer>
+
+    <!-- Section Navigation -->
+    <div class="section-nav">
+        <a href="#section-0" title="Demographics"></a>
+        <a href="#section-1" title="Sound Quality"></a>
+        <a href="#section-2" title="Pricing"></a>
+        <a href="#section-3" title="Usage"></a>
+        <a href="#section-4" title="Channels"></a>
+        <a href="#section-5" title="Brand Strategy"></a>
+    </div>
+
+    <!-- Export Button -->
+    <button class="export-btn" onclick="exportDashboard()">🖨️ Print Dashboard</button>
+
+    <script>
+        // Color palette - Sophisticated executive scheme
+        const colors = {
+            deepBlue: 'rgba(30, 58, 138, 0.85)',
+            teal: 'rgba(8, 145, 178, 0.85)',
+            emerald: 'rgba(5, 150, 105, 0.85)',
+            amber: 'rgba(217, 119, 6, 0.85)',
+            red: 'rgba(220, 38, 38, 0.85)',
+            purple: 'rgba(124, 58, 237, 0.85)',
+            pink: 'rgba(219, 39, 119, 0.85)',
+            slate: 'rgba(100, 116, 139, 0.7)'
+        };
+
+        const demographicColors = [
+            colors.deepBlue, colors.teal, colors.emerald, 
+            colors.amber, colors.red, colors.purple, colors.pink
+        ];
+
+        // Chart.js defaults
+        Chart.defaults.font.family = "'DM Sans', sans-serif";
+        Chart.defaults.color = '#666';
+
+        // Age Chart
+        new Chart(document.getElementById('ageChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['18-24', '25-34', 'Under 18', '35-44', '45-54', '55-64', '65+'],
+                datasets: [{
+                    data: [68.4, 18.1, 4.2, 4.1, 3.5, 1.4, 0.3],
+                    backgroundColor: demographicColors,
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { padding: 15, font: { size: 11 } }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: (context) => context.label + ': ' + context.parsed + '%'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Gender Chart
+        new Chart(document.getElementById('genderChart'), {
+            type: 'pie',
+            data: {
+                labels: ['Female', 'Male', 'Non-binary', 'Prefer not to say'],
+                datasets: [{
+                    data: [51.6, 45.7, 1.3, 1.4],
+                    backgroundColor: [colors.deepBlue, colors.teal, colors.emerald, colors.amber],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { padding: 15, font: { size: 11 } }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: (context) => context.label + ': ' + context.parsed + '%'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Income Chart
+        new Chart(document.getElementById('incomeChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Prefer not to say', '<$25K', '>$100K', '$25-50K', '$50-75K', '$75-100K'],
+                datasets: [{
+                    data: [30.2, 23.0, 14.3, 14.1, 10.2, 8.2],
+                    backgroundColor: demographicColors,
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { padding: 15, font: { size: 11 } }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: (context) => context.label + ': ' + context.parsed + '%'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Sound Quality Ratings
+        new Chart(document.getElementById('soundQualityChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Excellent', 'Good', 'Average', 'Poor', 'Very Poor'],
+                datasets: [{
+                    data: [1790, 1780, 520, 50, 15],
+                    backgroundColor: colors.deepBlue,
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { font: { size: 11 } },
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { font: { size: 11 } }
+                    }
+                }
+            }
+        });
+
+        // Sentiment Distribution
+        new Chart(document.getElementById('sentimentChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Positive', 'Mixed', 'Negative'],
+                datasets: [{
+                    data: [38, 34, 28],
+                    backgroundColor: [colors.emerald, colors.amber, colors.red],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { padding: 15, font: { size: 12 } }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: (context) => context.label + ': ' + context.parsed + '%'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Sound Quality Issues
+        new Chart(document.getElementById('issuesChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Distortion', 'Muffled/Muddy', 'Inconsistent', 'High Volume Issues', 'Bass Overpowering', 'Flat/No Depth', 'Breaks Up', 'Unbalanced'],
+                datasets: [{
+                    label: 'Mentions',
+                    data: [412, 367, 342, 325, 298, 251, 214, 203],
+                    backgroundColor: colors.red,
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: { font: { size: 12 } },
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { font: { size: 12 } }
+                    }
+                }
+            }
+        });
+
+        // Price - Low Sound Quality Priority
+        new Chart(document.getElementById('priceLowPriorityChart'), {
+            type: 'bar',
+            data: {
+                labels: ['<$50', '$50-100', '$100-200', '$200-300', '>$300'],
+                datasets: [{
+                    data: [610, 610, 390, 130, 55],
+                    backgroundColor: [colors.slate, colors.slate, colors.teal, colors.emerald, colors.amber],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { font: { size: 11 } },
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { font: { size: 11 } }
+                    }
+                }
+            }
+        });
+
+        // Price - High Sound Quality Priority
+        new Chart(document.getElementById('priceHighPriorityChart'), {
+            type: 'bar',
+            data: {
+                labels: ['$50-100', '<$50', '$100-200', '$200-300', '>$300'],
+                datasets: [{
+                    data: [620, 505, 445, 115, 62],
+                    backgroundColor: [colors.slate, colors.slate, colors.deepBlue, colors.emerald, colors.amber],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { font: { size: 11 } },
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { font: { size: 11 } }
+                    }
+                }
+            }
+        });
+
+        // Usage Frequency
+        new Chart(document.getElementById('usageChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Several times/week', 'Daily', '1-3 times/month', 'Rarely', 'Once a week'],
+                datasets: [{
+                    label: 'Respondents',
+                    data: [1200, 1050, 480, 420, 400],
+                    backgroundColor: colors.deepBlue,
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: { font: { size: 12 } },
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { font: { size: 12 } }
+                    }
+                }
+            }
+        });
+
+        // Purchase Channels
+        new Chart(document.getElementById('channelChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Amazon (multi-brand)', 'Amazon (direct)', 'Electronics stores', 'Department stores', 'Brand websites'],
+                datasets: [{
+                    data: [1620, 1615, 735, 640, 480],
+                    backgroundColor: [colors.deepBlue, colors.teal, colors.emerald, colors.purple, colors.amber],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: { font: { size: 12 } },
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { font: { size: 11 } }
+                    }
+                }
+            }
+        });
+
+        // Brand Recognition
+        new Chart(document.getElementById('brandChart'), {
+            type: 'bar',
+            data: {
+                labels: ['JBL', 'Bose', 'Sony', 'Samsung', 'Marshall', 'Beats', 'Boat', 'Apple'],
+                datasets: [{
+                    label: 'Respondents',
+                    data: [2216, 1142, 870, 523, 208, 53, 45, 41],
+                    backgroundColor: [colors.slate, colors.slate, colors.slate, colors.slate, colors.slate, colors.emerald, colors.slate, colors.slate],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { font: { size: 12 } },
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { font: { size: 12 } }
+                    }
+                }
+            }
+        });
+
+        // Tab switching
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(tab + '-tab').classList.add('active');
+        }
+
+        // Export dashboard
+        function exportDashboard() {
+            window.print();
+        }
+
+        // Add animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(400px); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(400px); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Scroll-based section highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.section-nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach((link, index) => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Chart click interactions - show data point details
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add click handlers to all charts for interactivity
+            setTimeout(() => {
+                const chartInstances = Object.values(Chart.instances || {});
+                chartInstances.forEach(chart => {
+                    if (chart && chart.config) {
+                        const originalOnClick = chart.config.options.onClick;
+                        chart.config.options.onClick = (event, elements) => {
+                            if (elements.length > 0) {
+                                const element = elements[0];
+                                const label = chart.data.labels[element.index];
+                                const value = chart.data.datasets[element.datasetIndex].data[element.index];
+                                
+                                // Create tooltip popup
+                                const popup = document.createElement('div');
+                                popup.style.cssText = `
+                                    position: fixed;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    background: white;
+                                    padding: 24px 32px;
+                                    border-radius: 8px;
+                                    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+                                    z-index: 10000;
+                                    font-size: 16px;
+                                    font-weight: 600;
+                                    color: #1a1a1a;
+                                    border: 2px solid #1e3a8a;
+                                `;
+                                popup.innerHTML = `
+                                    <div style="margin-bottom: 8px; color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Data Point</div>
+                                    <div style="font-size: 20px; margin-bottom: 4px;">${label}</div>
+                                    <div style="font-size: 28px; color: #1e3a8a;">${typeof value === 'number' ? value.toLocaleString() : value}${typeof value === 'number' && value < 100 && !label.includes('$') ? '%' : ''}</div>
+                                    <div style="margin-top: 16px; font-size: 12px; color: #999; cursor: pointer;" onclick="this.parentElement.remove()">Click anywhere to close</div>
+                                `;
+                                
+                                document.body.appendChild(popup);
+                                
+                                // Close on click anywhere
+                                setTimeout(() => {
+                                    const closeHandler = () => {
+                                        popup.remove();
+                                        document.removeEventListener('click', closeHandler);
+                                    };
+                                    document.addEventListener('click', closeHandler);
+                                }, 100);
+                            }
+                            
+                            if (originalOnClick) {
+                                originalOnClick(event, elements);
+                            }
+                        };
+                        chart.update();
+                    }
+                });
+            }, 1000);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const sections = ['section-0', 'section-1', 'section-2', 'section-3', 'section-4', 'section-5'];
+            const currentSection = sections.find(id => {
+                const el = document.getElementById(id);
+                return el && el.getBoundingClientRect().top >= 0 && el.getBoundingClientRect().top < window.innerHeight;
+            });
+            
+            if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+                const currentIndex = sections.indexOf(currentSection);
+                if (currentIndex < sections.length - 1) {
+                    e.preventDefault();
+                    document.getElementById(sections[currentIndex + 1]).scrollIntoView({ behavior: 'smooth' });
+                }
+            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                const currentIndex = sections.indexOf(currentSection);
+                if (currentIndex > 0) {
+                    e.preventDefault();
+                    document.getElementById(sections[currentIndex - 1]).scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
